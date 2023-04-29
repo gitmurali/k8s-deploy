@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+spec:
+  selector:
+    app: users
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+        - name: users-api
+          image: gomurali/kub-dep-users:latest
+          env:
+            - name: MONGODB_CONNECTION_URI
+              value: "mongodb+srv://muralinutalapatii:MHWpodP5WIY2yP0l@cluster0.mmptqbl.mongodb.net/users?retryWrites=true&w=majority"
+            - name: AUTH_API_ADDRESSS
+              value: "auth-service.default:3000"
