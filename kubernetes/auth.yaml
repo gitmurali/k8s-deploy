@@ -27,7 +27,4 @@ spec:
     spec:
       containers:
         - name: auth-api
-          image: gomurali/kub-dep-auth:latest
-          env:
-            - name: TOKEN_KEY
-              value: "shouldbeverysecure"
+          image: gomurali/k8s-auth:latest

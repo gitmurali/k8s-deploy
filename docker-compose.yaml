@@ -13,3 +13,9 @@ services:
     environment:
       MONGODB_CONNECTION_URI: "mongodb+srv://muralinutalapatii:MHWpodP5WIY2yP0l@cluster0.mmptqbl.mongodb.net/users?retryWrites=true&w=majority"
       AUTH_API_ADDRESSS: "auth:3000"
+  nextapp:
+    build: ./frontend-app
+    ports:
+      - "4200:3000"
+    environment:
+      USERS_API: "localhost:8080"

@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend # select the users pod and expose
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend # label by which pod can be selected
+    spec:
+      containers:
+        - name: frontend-app-container
+          image: gomurali/k8s-frontend-app:latest
+          env:
+            - name: USERS_API
+              value: "users-service.default:3001"

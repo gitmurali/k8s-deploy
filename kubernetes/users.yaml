@@ -4,11 +4,11 @@ metadata:
   name: users-service
 spec:
   selector:
-    app: users
+    app: users # select the users pod and expose
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 80
+      port: 3001
       targetPort: 3000
 ---
 apiVersion: apps/v1
@@ -23,11 +23,11 @@ spec:
   template:
     metadata:
       labels:
-        app: users
+        app: users # label by which pod can be selected
     spec:
       containers:
         - name: users-api
-          image: gomurali/kub-dep-users:latest
+          image: gomurali/k8s-users:latest
           env:
             - name: MONGODB_CONNECTION_URI
               value: "mongodb+srv://muralinutalapatii:MHWpodP5WIY2yP0l@cluster0.mmptqbl.mongodb.net/users?retryWrites=true&w=majority"
