@@ -28,6 +28,3 @@ spec:
       containers:
         - name: frontend-app-container
           image: gomurali/k8s-frontend-app:latest
-          env:
-            - name: USERS_API
-              value: "users-service.default:3001"

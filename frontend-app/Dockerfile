@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:16-alpine as builder
 
 WORKDIR /app
 
@@ -8,10 +8,18 @@ RUN npm install
 
 COPY . .
 
-ENV USERS_API  http://localhost:3001
-
 RUN npm run build
 
-EXPOSE 3000
+FROM nginx:stable-alpine
 
-CMD [ "npm", "run", "start" ]
+RUN mkdir /usr/share/nginx/buffer
+
+COPY --from=builder /app/.next /usr/share/nginx/html
+COPY --from=builder /app/public /usr/share/nginx/html
+COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
+
+RUN mkdir /usr/share/nginx/log
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

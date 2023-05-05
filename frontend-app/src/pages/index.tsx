@@ -10,7 +10,7 @@ export default function Home() {
   const subscribe = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${process.env.USERS_API}/signup`, {
+      const res = await fetch("/signup", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
