@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useState } from "react";
 
@@ -33,36 +32,52 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <div className="p-8 justify-center items-center flex">
-        <form className="flex flex-col gap-y-2">
-          <input
-            className="bg-gray-200 shadow-inner rounded-l p-2 flex-1"
-            id="email"
-            type="email"
-            onChange={(e) =>
-              setInput((st) => ({ ...st, email: e.target.value }))
-            }
-            aria-label="email address"
-            placeholder="Enter your email address"
-          />
-          <input
-            className="bg-gray-200 shadow-inner rounded-l p-2 flex-1"
-            id="email"
-            type="password"
-            onChange={(e) =>
-              setInput((st) => ({ ...st, password: e.target.value }))
-            }
-            aria-label="password"
-            placeholder="password"
-          />
-          <button
-            className="bg-blue-600 hover:bg-blue-700 duration-300 text-white shadow p-2 rounded-r"
-            type="submit"
-            onClick={subscribe}
-          >
-            Sign Up
-          </button>
+      <div className="w-full max-w-xs">
+        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              onChange={(e) =>
+                setInput((st) => ({ ...st, email: e.target.value }))
+              }
+              aria-label="email address"
+              placeholder="Enter your email address"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div className="mb-6">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              onChange={(e) =>
+                setInput((st) => ({ ...st, password: e.target.value }))
+              }
+              aria-label="password"
+              className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="******************"
+            />
+            <p className="text-red-500 text-xs italic">
+              Please choose a password.
+            </p>
+          </div>
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              onClick={subscribe}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Sign Up
+            </button>
+          </div>
         </form>
+        <p className="text-center text-gray-500 text-xs">&copy;2023 Murali</p>
       </div>
     </main>
   );
