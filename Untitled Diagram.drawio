@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-08T07:10:55.364Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0" etag="QPgfI-f8MAUgVn0_Ck65" version="21.2.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-08T07:19:04.676Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0" etag="HYxLev5BT9lhYygk48zT" version="21.2.2" type="github">
   <diagram name="Page-1" id="HHfFjZHEkgntHL0ET5BJ">
     <mxGraphModel dx="1370" dy="797" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -95,6 +95,12 @@
         </mxCell>
         <mxCell id="itA_Wpq4DEyvUuwsekM7-64" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Docker.svg;" vertex="1" parent="itA_Wpq4DEyvUuwsekM7-54">
           <mxGeometry x="590" y="294" width="50" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="itA_Wpq4DEyvUuwsekM7-65" value="Nginx" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#2E8528;" vertex="1" parent="itA_Wpq4DEyvUuwsekM7-54">
+          <mxGeometry x="250" y="31" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="itA_Wpq4DEyvUuwsekM7-66" value="reverse proxy" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ff316c;fontStyle=1" vertex="1" parent="itA_Wpq4DEyvUuwsekM7-54">
+          <mxGeometry x="320" y="31" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="itA_Wpq4DEyvUuwsekM7-63" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Docker.svg;" vertex="1" parent="1">
           <mxGeometry x="541" y="544" width="50" height="41" as="geometry" />
