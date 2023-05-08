@@ -30,6 +30,6 @@ spec:
           image: gomurali/k8s-users:latest
           env:
             - name: MONGODB_CONNECTION_URI
-              value: "mongodb+srv://muralinutalapatii:MHWpodP5WIY2yP0l@cluster0.mmptqbl.mongodb.net/users?retryWrites=true&w=majority"
+              value: "<your_mongo_db_url>"
             - name: AUTH_API_ADDRESSS
               value: "auth-service.default:3000"
